@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from '../components/Navbar/Navbar'
 
 function ofertas() {
   return (
     <div>
-      <h1>ofertas</h1>
+        <Navbar />
+        ofertas!
     </div>
   )
 }

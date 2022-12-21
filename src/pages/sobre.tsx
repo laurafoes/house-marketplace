@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 
-function explorar() {
+function sobre() {
   return (
     <div>
         <Navbar />
-      <p>Explorar</p>
+      sobre nós!
     </div>
   )
 }
 
-export default explorar
+export default sobre

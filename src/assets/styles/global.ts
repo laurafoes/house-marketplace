@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Quicksand', sans-serif;
     background-color: ${props => props.theme.colors.primaryBg};
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.text};
     font-size: ${props => props.theme.fontSizes.small};
   }
 
@@ -25,10 +25,17 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: ${props => props.theme.fontSizes.large};
+    color: ${props => props.theme.colors.primary};
   }
 
   h2, h3 {
     font-size: ${props => props.theme.fontSizes.medium};
+    color: ${props => props.theme.colors.primary};
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `
 

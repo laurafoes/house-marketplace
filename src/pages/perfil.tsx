@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from '../components/Navbar/Navbar'
 
 function perfil() {
   return (
     <div>
-      <h1>perfil</h1>
+        <Navbar />
+      <p>perfil</p>
     </div>
   )
 }
