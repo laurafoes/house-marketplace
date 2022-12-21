@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Navbar from '../components/Navbar/Navbar'
+import Hero from '../components/Hero'
+import Navbar from '../components/Navbar'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       </Head>
       <main>
         <Navbar />
+        <Hero />
         <h1>hello world</h1>
       </main>
     </>
