@@ -3,10 +3,9 @@ import Navbar from '../components/Navbar'
 
 function sobre() {
   return (
-    <div>
-        <Navbar />
-      sobre nós!
-    </div>
+    <>
+        sobre nos!
+    </>
   )
 }
 

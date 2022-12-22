@@ -27,8 +27,12 @@ export const ItemsWrapper = styled.ul`
 `
 export const Item = styled.li`
     padding-bottom: 2rem;
+    cursor: pointer;
+    transition: all 300ms;
+    &:hover {
+        color: ${props => props.theme.colors.primary}
+    }
 `
-
 
 export const SocialMediaWrapper = styled.div`
     margin: 2rem 0;

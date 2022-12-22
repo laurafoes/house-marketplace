@@ -62,7 +62,7 @@ function Footer() {
                     <img src='/LINKEDIN.svg' />
                 </SocialMediaLink>
             </SocialMediaWrapper>
-            <p>contato@olar.com.br</p>
+            <Link href="mailto:contato@olar.com.br">contato@olar.com.br</Link>
         </ColWrapper>
 
 

@@ -3,10 +3,9 @@ import Navbar from '../components/Navbar'
 
 function explorar() {
   return (
-    <div>
-        <Navbar />
-      <p>Explorar</p>
-    </div>
+    <>
+        explorar
+    </>
   )
 }
 

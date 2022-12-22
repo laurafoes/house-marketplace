@@ -33,4 +33,9 @@ export const MenuItem = styled.li `
 export const UserIcon = styled(FaUserCircle)`
     color: ${props => props.theme.colors.primary};
     font-size: 42px;
+    cursor: pointer;
+    transition: all 300ms;
+    &:hover {
+        scale: 1.1;
+    }
 `
