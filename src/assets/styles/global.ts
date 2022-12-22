@@ -30,7 +30,7 @@ const GlobalStyles = createGlobalStyle`
 
   h2, h3 {
     font-size: ${props => props.theme.fontSizes.medium};
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.text};
   }
 
   a {

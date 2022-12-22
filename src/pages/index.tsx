@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Categories from '../components/Categories'
 import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
 
@@ -13,6 +14,7 @@ export default function Home() {
       <main>
         <Navbar />
         <Hero />
+        <Categories />
         <h1>hello world</h1>
       </main>
     </>

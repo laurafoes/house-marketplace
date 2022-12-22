@@ -2,7 +2,7 @@ const theme = {
     colors: {
         primaryBg: '#FFFFFF',
         secondaryBg: '#d3d5d7',
-        gradientBg: 'linear-gradient(#d3d5d7, #FFFFFF)',
+        gradientBg: 'linear-gradient(180deg, #d3d5d7, #FFFFFF)',
         text: '#050517',
         primary: '#CF5C36',
         secondary: '#efc88b',
