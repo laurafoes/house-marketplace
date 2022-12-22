@@ -13,7 +13,7 @@ export const HeroContainer = styled.section`
 export const Banner = styled.div`
     background-color: aliceblue;
     width: 65%;
-    height: 100%;
+    height: 95%;
     border-radius: 60px 0px 0px 20px;
     background-image: url('/hero-banner.jpg');
     background-repeat: no-repeat;

@@ -11,7 +11,7 @@ export const CategoriesContainer = styled.section`
 export const CategoriesWrapper = styled.div`
     background: ${props => props.theme.colors.secondaryBg};
     width: 100%;
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
