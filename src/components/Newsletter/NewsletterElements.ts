@@ -45,6 +45,7 @@ export const Input = styled.input`
 export const InputButton = styled.button`
     background-color: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.primaryBg};
+    font-family: 'Quicksand', sans-serif;
     border-radius: 100px;
     border: none;
     padding: 1.5rem 4rem;

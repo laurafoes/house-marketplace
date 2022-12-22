@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Categories from '../components/Categories'
+import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
@@ -17,7 +18,7 @@ export default function Home() {
         <Hero />
         <Categories />
         <Newsletter />
-        <h1>hello world</h1>
+        <Footer />
       </main>
     </>
   )
