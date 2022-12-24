@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Button from '../Button';
 import styled from "styled-components";
 
 import { Banner } from "../Hero/HeroElements";
@@ -17,7 +16,7 @@ export const FormWrapper = styled.section`
     justify-content: flex-start;
     padding: 4rem;
     width: 100%;
-    height: 80%;
+    height: auto;
     min-width: 540px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
 `

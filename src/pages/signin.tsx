@@ -1,10 +1,10 @@
 import React from 'react'
-import SignIn from '../components/SignIn'
+import AuthForm from '../components/AuthForm'
 
 function signin() {
   return (
     <>
-        <SignIn />
+        <AuthForm />
     </>
   )
 }

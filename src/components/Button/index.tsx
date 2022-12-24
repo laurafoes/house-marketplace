@@ -4,11 +4,12 @@ import { MainButton } from './ButtonElements'
 interface ButtonProps {
     children: ReactNode,
     variant: 'primary' | 'secondary',
+    type: 'button' | 'submit'
 }
 
-function Button({ children, variant }: ButtonProps) {
+function Button({ children, variant, type }: ButtonProps) {
   return (
-    <MainButton variant={variant}>
+    <MainButton variant={variant} type={type}>
         { children }
     </MainButton>
   )

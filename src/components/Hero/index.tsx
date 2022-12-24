@@ -11,12 +11,12 @@ function Hero() {
             <h1>seu próximo lar</h1>
             <ButtonsWrapper>
                 <Link href='/explorar'>
-                    <Button variant='primary'>
+                    <Button variant='primary' type='button'>
                         Explore o Marketplace
                     </Button>
                 </Link>
                 <Link href='/ofertas'>
-                    <Button variant='secondary'>
+                    <Button variant='secondary' type='button'>
                         Nossas ofertas
                     </Button>
                 </Link>

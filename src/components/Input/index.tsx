@@ -32,17 +32,17 @@ function Input({ variant, dadosFormulario, setDadosFormulario, mostraSenha, setM
 
   return (
     <InputContainer>
-        {renderIcon(variant)}
+        { renderIcon(variant) }
         <InputElement
             placeholder={variant}
             name={variant.toLowerCase()}
             onChange={(e) => setDadosFormulario({...dadosFormulario, [e.target.name]: e.target.value})}
             type={mostraSenha ? 'text' : 'password'}
         />
-        <ViewPassword
+        { variant === 'Senha' ? <ViewPassword
             mostraSenha={mostraSenha}
             onClick={() => setMostraSenha ? setMostraSenha(!mostraSenha) : null}
-        />
+        /> : null }
     </InputContainer>
   )
 }
