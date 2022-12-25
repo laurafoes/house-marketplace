@@ -2,7 +2,7 @@ import React from 'react'
 import { EmailIcon, InputContainer, NameIcon, PasswordIcon, InputElement, ViewPassword } from './InputElements'
 
 interface InputProps {
-    variant: 'Nome' | 'E-mail' | 'Senha',
+    variant: 'Nome' | 'Email' | 'Senha',
     nome?: string,
     email?: string,
     senha?: string,
@@ -25,10 +25,12 @@ function Input({ variant, dadosFormulario, setDadosFormulario, mostraSenha, setM
     const renderIcon = ( type: InputProps ) => {
         if (type.variant === 'Nome'){
             return <NameIcon />
-        } else if (type.variant === 'E-mail') {
+        } else if (type.variant === 'Email') {
             return <EmailIcon />
         } else { return <PasswordIcon />}
     }
+
+    console.log(mostraSenha, variant)
 
   return (
     <InputContainer>
@@ -37,7 +39,7 @@ function Input({ variant, dadosFormulario, setDadosFormulario, mostraSenha, setM
             placeholder={variant}
             name={variant.toLowerCase()}
             onChange={(e) => setDadosFormulario({...dadosFormulario, [e.target.name]: e.target.value})}
-            type={mostraSenha ? 'text' : 'password'}
+            type={ !mostraSenha && variant === 'Senha' ? 'password' : 'text'}
         />
         { variant === 'Senha' ? <ViewPassword
             mostraSenha={mostraSenha}

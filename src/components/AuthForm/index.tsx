@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react'
 import Button from '../Button'
 import { HeroContainer, HeroContent } from '../Hero/HeroElements'
 import Input from '../Input'
+import { setDoc, doc, serverTimestamp, FieldValue } from 'firebase/firestore'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { FormLink, FormSignUp, FormTitle, FormWrapper, SignInBanner } from './AuthFormElements'
+import { app, db } from '../../firebase.config'
 
 function AuthForm() {
     const [ ehCadastro, setEhCadastro ] = useState(false)
@@ -14,8 +17,58 @@ function AuthForm() {
         senha: ''
     })
 
+    interface copiaDadosFormulario {
+        nome: string,
+        email: string,
+        senha?: string,
+        timestamp?: FieldValue
+    }
+
     const route = useRouter();
 
+    const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        const auth = getAuth(app)
+
+        if(ehCadastro) {
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, dadosFormulario.email, dadosFormulario.senha)
+
+                const user = userCredential.user
+
+                if(auth.currentUser) {
+                    updateProfile(auth.currentUser, {
+                        displayName: dadosFormulario.nome
+                    })
+                }
+
+                const copiaDadosFormulario: copiaDadosFormulario = {...dadosFormulario}
+                delete copiaDadosFormulario.senha
+                copiaDadosFormulario.timestamp = serverTimestamp()
+
+                await setDoc(doc(db, 'users', user.uid), copiaDadosFormulario)
+
+                route.push('/')
+
+            } catch (error) {
+                alert(error)
+            }
+        } else {
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, dadosFormulario.email, dadosFormulario.senha)
+
+                if(userCredential.user) {
+                    route.push('/')
+                }
+            } catch(error) {
+                alert(error)
+            }
+        }
+
+    }
+
+    console.log(dadosFormulario)
     useEffect(() => {
 
         if(route.pathname === '/signin') {
@@ -27,7 +80,7 @@ function AuthForm() {
     <HeroContainer>
       <HeroContent>
         <FormWrapper>
-            <form onSubmit={(e) => e.preventDefault()}>
+            <form onSubmit={onSubmit}>
                 <FormTitle>
                     { ehCadastro ? 'inscreva-se ja' : 'faça o login'}
                 </FormTitle>
@@ -37,7 +90,7 @@ function AuthForm() {
                     setDadosFormulario={setDadosFormulario}
                 /> : null }
                 <Input
-                    variant='E-mail'
+                    variant='Email'
                     dadosFormulario={dadosFormulario}
                     setDadosFormulario={setDadosFormulario}
                 />
