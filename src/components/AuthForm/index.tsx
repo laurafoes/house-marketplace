@@ -7,6 +7,7 @@ import { setDoc, doc, serverTimestamp, FieldValue } from 'firebase/firestore'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { FormLink, FormSignUp, FormTitle, FormWrapper, SignInBanner } from './AuthFormElements'
 import { app, db } from '../../firebase.config'
+import { toast } from 'react-toastify'
 
 function AuthForm() {
     const [ ehCadastro, setEhCadastro ] = useState(false)
@@ -52,17 +53,17 @@ function AuthForm() {
                 route.push('/')
 
             } catch (error) {
-                alert(error)
+                toast.error('Ocorreu um erro durante o registro. Tente novamente mais tarde.')
             }
         } else {
             try {
                 const userCredential = await signInWithEmailAndPassword(auth, dadosFormulario.email, dadosFormulario.senha)
 
                 if(userCredential.user) {
-                    route.push('/')
+                    route.push('/perfil')
                 }
             } catch(error) {
-                alert(error)
+                toast.error('As credenciais não coincidem.')
             }
         }
 
