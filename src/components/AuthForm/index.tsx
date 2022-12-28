@@ -31,7 +31,6 @@ function AuthForm() {
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-
         if(ehCadastro) {
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, dadosFormulario.email, dadosFormulario.senha)
