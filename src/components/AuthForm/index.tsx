@@ -26,11 +26,11 @@ function AuthForm() {
     }
 
     const route = useRouter();
+    const auth = getAuth(app)
 
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        const auth = getAuth(app)
 
         if(ehCadastro) {
             try {

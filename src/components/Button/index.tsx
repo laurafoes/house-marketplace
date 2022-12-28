@@ -4,12 +4,13 @@ import { MainButton } from './ButtonElements'
 interface ButtonProps {
     children: ReactNode,
     variant: 'primary' | 'secondary',
-    type: 'button' | 'submit'
+    type: 'button' | 'submit',
+    onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-function Button({ children, variant, type }: ButtonProps) {
+function Button({ children, variant, type, onClick }: ButtonProps) {
   return (
-    <MainButton variant={variant} type={type}>
+    <MainButton variant={variant} type={type} onClick={onClick}>
         { children }
     </MainButton>
   )

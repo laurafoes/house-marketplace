@@ -1,7 +1,9 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { ToastContainer } from 'react-toastify'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from '../assets/styles/global'
+import 'react-toastify/dist/ReactToastify.css'
 import theme from '../assets/styles/theme'
 import Layout from '../components/Layout'
 
@@ -18,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
         </Layout>
         <GlobalStyles />
+        <ToastContainer />
     </ThemeProvider>
   )
 }
