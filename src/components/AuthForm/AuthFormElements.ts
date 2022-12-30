@@ -37,5 +37,7 @@ export const FormLink = styled(Link)`
 `
 export const FormSignUp = styled.div`
     align-self: center;
+    display: flex;
+    justify-content: center;
     margin-top: 2rem;
 `

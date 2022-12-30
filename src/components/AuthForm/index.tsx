@@ -8,6 +8,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, up
 import { FormLink, FormSignUp, FormTitle, FormWrapper, SignInBanner } from './AuthFormElements'
 import { app, db } from '../../firebase.config'
 import { toast } from 'react-toastify'
+import OAuth from '../OAuth'
 
 function AuthForm() {
     const [ ehCadastro, setEhCadastro ] = useState(false)
@@ -56,7 +57,6 @@ function AuthForm() {
 
             } catch (error) {
                 toast.error('Ocorreu um erro durante o registro. Tente novamente mais tarde.')
-                alert(error)
             }
         } else {
             try {
@@ -67,7 +67,6 @@ function AuthForm() {
                 }
             } catch(error) {
                 toast.error('As credenciais não coincidem.')
-                alert(error)
             }
         }
 
@@ -115,13 +114,17 @@ function AuthForm() {
                 >
                     { ehCadastro ? 'Cadastrar' : 'Acessar' }
                 </Button>
+                <OAuth />
                 <FormSignUp>
+                    { !ehCadastro ?
                     <p>
                         Ainda não possui cadastro?&nbsp;
                         <FormLink href='/signup'>
                             Clique aqui
                         </FormLink>
-                    </p>
+                    </p> :
+                    null
+                    }
                 </FormSignUp>
             </form>
         </FormWrapper>
