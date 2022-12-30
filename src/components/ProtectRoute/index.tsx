@@ -26,7 +26,7 @@ const ProtectRoute = ({ children }: ProtectRoute) => {
         })
     })
 
-    if (carregando) {
+    if (!autenticado && carregando) {
         return(
             <> <Spinner /> </>
         )

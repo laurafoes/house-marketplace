@@ -30,6 +30,7 @@ function AuthForm() {
 
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        console.log(dadosFormulario)
 
         if(ehCadastro) {
             try {
@@ -49,10 +50,13 @@ function AuthForm() {
 
                 await setDoc(doc(db, 'users', user.uid), copiaDadosFormulario)
 
+                toast.success('Cadastro realizado com sucesso.')
+
                 route.push('/')
 
             } catch (error) {
                 toast.error('Ocorreu um erro durante o registro. Tente novamente mais tarde.')
+                alert(error)
             }
         } else {
             try {
@@ -63,6 +67,7 @@ function AuthForm() {
                 }
             } catch(error) {
                 toast.error('As credenciais não coincidem.')
+                alert(error)
             }
         }
 
@@ -108,7 +113,7 @@ function AuthForm() {
                     variant='primary'
                     type='submit'
                 >
-                    Acessar
+                    { ehCadastro ? 'Cadastrar' : 'Acessar' }
                 </Button>
                 <FormSignUp>
                     <p>
