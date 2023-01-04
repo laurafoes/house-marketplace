@@ -14,6 +14,7 @@ function OAuth() {
             const auth = getAuth(app)
             const provider = new GoogleAuthProvider()
             const res = await signInWithPopup(auth, provider)
+            console.log(res)
             const user = res.user
 
             const docRef = doc(db, 'users', user.uid)
@@ -27,8 +28,8 @@ function OAuth() {
                 })
             }
             route.push('/')
-        } catch(error) {
-            toast.error('Não foi possível autenticar com o Google.')
+        } catch(error: any) {
+            toast.error(error)
         }
     }
 

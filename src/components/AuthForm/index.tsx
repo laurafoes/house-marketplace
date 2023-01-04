@@ -66,7 +66,7 @@ function AuthForm() {
                     route.push('/perfil')
                 }
             } catch(error) {
-                toast.error('As credenciais não coincidem.')
+                // toast.error('As credenciais não coincidem.')
             }
         }
 

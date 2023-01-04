@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const CategoriesContainer = styled.section`
+interface CategoriesProps {
+    explorePage?: boolean
+}
+
+export const CategoriesContainer = styled.section<CategoriesProps>`
     width: 100%;
-    height: 100vh;
+    height: ${({explorePage}) => explorePage ? '92vh' : '100vh' };
     background-color: ${props => props.theme.colors.primaryBg};
     display: flex;
     flex-direction: column;
@@ -32,6 +36,11 @@ export const OptionsWrapper = styled.div`
     justify-content: flex-end;
     align-items: center;
     gap: 5%;
+`
+
+export const ListingsWrapper = styled.div`
+    width: 100%;
+    padding: 3rem 10rem 0rem 10rem;
 `
 
 export const Rentals = styled.div`
